@@ -1,0 +1,287 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LoanCalculator.Common</name>
+    </assembly>
+    <members>
+        <member name="T:LoanCalculator.Common.LoanTermsDto">
+            <summary>
+            Incoming Request of LoanTerms.
+            </summary>
+            <param name="LoanAmount"></param>
+            <param name="LoanTenureYears"></param>
+            <param name="IndicativeInterestRate"></param>
+        </member>
+        <member name="M:LoanCalculator.Common.LoanTermsDto.#ctor(System.Decimal,System.Int32,System.Decimal)">
+            <summary>
+            Incoming Request of LoanTerms.
+            </summary>
+            <param name="LoanAmount"></param>
+            <param name="LoanTenureYears"></param>
+            <param name="IndicativeInterestRate"></param>
+        </member>
+        <member name="P:LoanCalculator.Common.LoanTermsDto.LoanAmount">
+            <summary></summary>
+        </member>
+        <member name="P:LoanCalculator.Common.LoanTermsDto.LoanTenureYears">
+            <summary></summary>
+        </member>
+        <member name="P:LoanCalculator.Common.LoanTermsDto.IndicativeInterestRate">
+            <summary></summary>
+        </member>
+        <member name="T:LoanCalculator.Common.LoanTerms">
+            <summary>
+            Record type.
+            </summary>
+            <param name="LoanAmount"></param>
+            <param name="LoanTenureYears"></param>
+            <param name="IndicativeInterestRate"></param>
+        </member>
+        <member name="M:LoanCalculator.Common.LoanTerms.#ctor(LoanCalculator.Common.ValueObjects.Money,System.Int32,LoanCalculator.Common.ValueObjects.PercentageRate)">
+            <summary>
+            Record type.
+            </summary>
+            <param name="LoanAmount"></param>
+            <param name="LoanTenureYears"></param>
+            <param name="IndicativeInterestRate"></param>
+        </member>
+        <member name="P:LoanCalculator.Common.LoanTerms.LoanAmount">
+            <summary></summary>
+        </member>
+        <member name="P:LoanCalculator.Common.LoanTerms.LoanTenureYears">
+            <summary></summary>
+        </member>
+        <member name="P:LoanCalculator.Common.LoanTerms.IndicativeInterestRate">
+            <summary></summary>
+        </member>
+        <member name="T:LoanCalculator.Common.EquatedMonthlyInstallment">
+            <summary>
+            Strongly-typed Monthly Installment for LoanRepaymentSchedule.
+            </summary>
+            <param name="Month"></param>
+            <param name="MonthlyInstallment"></param>
+            <param name="Principal"></param>
+            <param name="Interest"></param>
+            <param name="OutstandingBalance"></param>
+        </member>
+        <member name="M:LoanCalculator.Common.EquatedMonthlyInstallment.#ctor(System.Int32,LoanCalculator.Common.ValueObjects.Money,LoanCalculator.Common.ValueObjects.Money,LoanCalculator.Common.ValueObjects.Money,LoanCalculator.Common.ValueObjects.Money)">
+            <summary>
+            Strongly-typed Monthly Installment for LoanRepaymentSchedule.
+            </summary>
+            <param name="Month"></param>
+            <param name="MonthlyInstallment"></param>
+            <param name="Principal"></param>
+            <param name="Interest"></param>
+            <param name="OutstandingBalance"></param>
+        </member>
+        <member name="P:LoanCalculator.Common.EquatedMonthlyInstallment.Month">
+            <summary></summary>
+        </member>
+        <member name="P:LoanCalculator.Common.EquatedMonthlyInstallment.MonthlyInstallment">
+            <summary></summary>
+        </member>
+        <member name="T:LoanCalculator.Common.EquatedMonthlyInstallmentDto">
+            <summary>
+            DTO for EquatedMonthlyInstallment.
+            </summary>
+            <param name="Month"></param>
+            <param name="MonthlyInstallment"></param>
+            <param name="Principal"></param>
+            <param name="Interest"></param>
+            <param name="OutstandingBalance"></param>
+        </member>
+        <member name="M:LoanCalculator.Common.EquatedMonthlyInstallmentDto.#ctor(System.Int32,System.String,System.String,System.String,System.String)">
+            <summary>
+            DTO for EquatedMonthlyInstallment.
+            </summary>
+            <param name="Month"></param>
+            <param name="MonthlyInstallment"></param>
+            <param name="Principal"></param>
+            <param name="Interest"></param>
+            <param name="OutstandingBalance"></param>
+        </member>
+        <member name="P:LoanCalculator.Common.EquatedMonthlyInstallmentDto.Month">
+            <summary></summary>
+        </member>
+        <member name="P:LoanCalculator.Common.EquatedMonthlyInstallmentDto.MonthlyInstallment">
+            <summary></summary>
+        </member>
+        <member name="T:LoanCalculator.Common.WeatherForecast">
+            <summary>
+            Record type.
+            </summary>
+            <param name="Date"></param>
+            <param name="TemperatureC"></param>
+            <param name="Summary"></param>
+        </member>
+        <member name="M:LoanCalculator.Common.WeatherForecast.#ctor(System.DateOnly,System.Int32,System.String)">
+            <summary>
+            Record type.
+            </summary>
+            <param name="Date"></param>
+            <param name="TemperatureC"></param>
+            <param name="Summary"></param>
+        </member>
+        <member name="P:LoanCalculator.Common.WeatherForecast.Date">
+            <summary></summary>
+        </member>
+        <member name="P:LoanCalculator.Common.WeatherForecast.TemperatureC">
+            <summary></summary>
+        </member>
+        <member name="P:LoanCalculator.Common.WeatherForecast.Summary">
+            <summary></summary>
+        </member>
+        <member name="T:LoanCalculator.Common.ValueObjects.Money">
+            <summary>
+            Strongly typed Money. Value is decimal.
+            </summary>
+        </member>
+        <member name="M:LoanCalculator.Common.ValueObjects.Money.op_Addition(LoanCalculator.Common.ValueObjects.Money,System.Object)">
+            <summary>
+            Value can be of type PercentageRate, decimal or int.
+            </summary>
+            <param name="money"></param>
+            <param name="value"></param>
+            <returns></returns>
+            <exception cref="T:LoanCalculator.Common.ValueObjects.ValueObjectException"></exception>
+        </member>
+        <member name="M:LoanCalculator.Common.ValueObjects.Money.op_Subtraction(LoanCalculator.Common.ValueObjects.Money,System.Object)">
+            <summary>
+            Value can be of type PercentageRate, decimal or int.
+            </summary>
+            <param name="money"></param>
+            <param name="value"></param>
+            <returns></returns>
+            <exception cref="T:LoanCalculator.Common.ValueObjects.ValueObjectException"></exception>
+        </member>
+        <member name="M:LoanCalculator.Common.ValueObjects.Money.op_Multiply(LoanCalculator.Common.ValueObjects.Money,System.Object)">
+            <summary>
+            Value can be of type PercentageRate, decimal or int.
+            ***Note: Applies Banker's Rounding to Value.***
+            </summary>
+            <param name="money"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LoanCalculator.Common.ValueObjects.Money.op_Division(LoanCalculator.Common.ValueObjects.Money,System.Object)">
+            <summary>
+            Value can be of type PercentageRate, decimal or int.
+            ***Note: Applies Banker's Rounding to Value.***
+            </summary>
+            <param name="money"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LoanCalculator.Common.ValueObjects.Money.op_GreaterThan(LoanCalculator.Common.ValueObjects.Money,System.Object)">
+            <summary>
+            Value can be of type PercentageRate, decimal or int.
+            ***Note: Applies Banker's Rounding to Value.***
+            </summary>
+            <param name="money"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LoanCalculator.Common.ValueObjects.Money.op_LessThan(LoanCalculator.Common.ValueObjects.Money,System.Object)">
+            <summary>
+            Value can be of type PercentageRate, decimal or int.
+            ***Note: Applies Banker's Rounding to Value.***
+            </summary>
+            <param name="money"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LoanCalculator.Common.ValueObjects.Money.op_GreaterThanOrEqual(LoanCalculator.Common.ValueObjects.Money,System.Object)">
+            <summary>
+            Value can be of type PercentageRate, decimal or int.
+            ***Note: Applies Banker's Rounding to Value.***
+            </summary>
+            <param name="money"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LoanCalculator.Common.ValueObjects.Money.op_LessThanOrEqual(LoanCalculator.Common.ValueObjects.Money,System.Object)">
+            <summary>
+            Value can be of type PercentageRate, decimal or int.
+            ***Note: Applies Banker's Rounding to Value.***
+            </summary>
+            <param name="money"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LoanCalculator.Common.ValueObjects.Money.UseBankersRounding(System.Decimal)">
+            <summary>
+            Overly-explicit declaration of rounding rules.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LoanCalculator.Common.ValueObjects.PercentageRate">
+            <summary>
+            Strongly typed PercentageRate. Value is decimal.
+            ***Note: Calculations SHOULD divide the Value by 100, where required.***
+            </summary>
+        </member>
+        <member name="M:LoanCalculator.Common.ValueObjects.PercentageRate.op_Equality(LoanCalculator.Common.ValueObjects.PercentageRate,System.Object)">
+            <summary>
+            Value can be of type PercentageRate, decimal or int.
+            </summary>
+            <param name="percentageRate"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LoanCalculator.Common.ValueObjects.PercentageRate.op_Inequality(LoanCalculator.Common.ValueObjects.PercentageRate,System.Object)">
+            <summary>
+            Value can be of type PercentageRate, decimal or int.
+            </summary>
+            <param name="percentageRate"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LoanCalculator.Common.ValueObjects.PercentageRate.op_Addition(LoanCalculator.Common.ValueObjects.PercentageRate,System.Object)">
+            <summary>
+            Value can be of type PercentageRate, decimal or int.
+            </summary>
+            <param name="percentageRate"></param>
+            <param name="value"></param>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:LoanCalculator.Common.ValueObjects.PercentageRate.op_Subtraction(LoanCalculator.Common.ValueObjects.PercentageRate,System.Object)">
+            <summary>
+            Value can be of type PercentageRate, decimal or int.
+            </summary>
+            <param name="percentageRate"></param>
+            <param name="value"></param>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:LoanCalculator.Common.ValueObjects.PercentageRate.op_Multiply(LoanCalculator.Common.ValueObjects.PercentageRate,System.Object)">
+            <summary>
+            Value can be of type PercentageRate, decimal or int.
+            </summary>
+            <param name="percentageRate"></param>
+            <param name="value"></param>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:LoanCalculator.Common.ValueObjects.PercentageRate.op_Division(LoanCalculator.Common.ValueObjects.PercentageRate,System.Object)">
+            <summary>
+            Value can be of type PercentageRate, decimal or int.
+            </summary>
+            <param name="percentageRate"></param>
+            <param name="value"></param>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="T:LoanCalculator.Common.ValueObjects.ValueObjectOperation">
+            <summary>
+            For Handling of ValueObjectException Messages.
+            </summary>
+        </member>
+        <member name="T:LoanCalculator.Common.ValueObjects.ValueObjectException">
+            <summary>
+            For now it's only used for ValueObject mathematical functions.
+            </summary>
+        </member>
+    </members>
+</doc>

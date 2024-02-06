@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LoanCalculator.ApiService</name>
+    </assembly>
+    <members>
+        <member name="M:LoanCalculator.ApiService.LoanCalculator.ContractsMapper.ToDto(LoanCalculator.ApiService.LoanCalculator.LoanEquatedRepaymentSchedule)">
+            <summary>
+            Map LoanEquatedRepaymentSchedule to its respective DTO.
+            </summary>
+            <param name="scheduleClass"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LoanCalculator.ApiService.LoanCalculator.LoanEquatedRepaymentSchedule">
+            <summary>
+            This Schedule will (i) calculate the EMI, then 
+            (ii) Calculate each MonthlyInterestPayment, then 
+            (iii) each MonthlyPrincipalPayback, and finally 
+            (iv) each PrincipalBalanceOwed.
+            </summary>
+        </member>
+        <member name="F:LoanCalculator.ApiService.LoanCalculator.LoanEquatedRepaymentSchedule.MonthlyInstallments">
+            <summary>
+            Collection of Equated Monthly Installments.
+            </summary>
+        </member>
+        <member name="P:LoanCalculator.ApiService.LoanCalculator.LoanEquatedRepaymentSchedule.EMI">
+            <summary>
+            Formula: Principal * (  ( r * ((1+r)^n) ) / ( ((1+r)^n) - 1 )  ).
+            </summary>
+        </member>
+        <member name="P:LoanCalculator.ApiService.LoanCalculator.LoanEquatedRepaymentSchedule.interestRateMonthlyPlusOneThenExponentN">
+            <summary>
+            `(1+r)^n` portion of the calculations.
+            </summary>
+        </member>
+        <member name="T:LoanCalculator.ApiService.LoanCalculator.LoanCalculatorService">
+            <summary>
+            May not be necessary for now as there's only 1 Calculation type,
+            but could be refactored in the future for more use cases.
+            </summary>
+        </member>
+    </members>
+</doc>

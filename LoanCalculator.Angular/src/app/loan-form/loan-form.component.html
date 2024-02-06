@@ -1,0 +1,98 @@
+<div class="row">
+  <div class="col-md-8 mx-auto">
+    <div class="card">
+      <div class="card-header">
+        <h1 class="mat-headline-4">Loan Calculator</h1>
+        <h4>See how much you have to repay each month.</h4>
+      </div>
+      <br />
+      <div class="card-body">
+        <form [formGroup]="loanForm">
+          <mat-form-field>
+            <mat-label>Loan Amount</mat-label>
+            <input matInput placeholder="Loan Amount" formControlName="loanAmount" />
+            <mat-error class="text-danger" *ngIf="(loanFormControl.loanAmount.touched || submitted)
+              && loanFormControl.loanAmount.errors?.['required']">
+                Loan Amount is required
+            </mat-error>
+            <mat-error class="text-danger" *ngIf="(loanFormControl.loanAmount.touched || submitted)
+            && (loanFormControl.loanAmount.errors?.['min'] || loanFormControl.loanAmount.errors?.['max'])">
+                Enter a Loan Amount between 1K and 10M
+            </mat-error>
+            <mat-error class="text-danger" *ngIf="(loanFormControl.loanAmount.touched || submitted)
+            && loanFormControl.loanAmount.errors?.['pattern']">
+                Enter a valid Loan Amount
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Loan Duration (Years)</mat-label>
+            <input matInput placeholder="Loan Duration (Years)" formControlName="loanTenureYears" />
+            <mat-error class="text-danger" *ngIf="(loanFormControl.loanTenureYears.touched || submitted)
+            && loanFormControl.loanTenureYears.errors?.['required']">
+                Loan Duration is required (1-30)
+            </mat-error>
+            <mat-error class="text-danger" *ngIf="(loanFormControl.loanTenureYears.touched || submitted)
+            && (loanFormControl.loanTenureYears.errors?.['min'] || loanFormControl.loanTenureYears.errors?.['max'])">
+                Duration should be between 1 and 30 Years
+            </mat-error>
+            <mat-error class="text-danger" *ngIf="(loanFormControl.loanTenureYears.touched || submitted)
+            && loanFormControl.loanTenureYears.errors?.['pattern']">
+                Enter a Whole Number for Years (1-30)
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Indicative Interest Rate</mat-label>
+            <input matInput placeholder="Indicative Interest Rate" formControlName="indicativeInterestRate" />
+            <mat-error class="text-danger" *ngIf="(loanFormControl.indicativeInterestRate.touched || submitted)
+            && loanFormControl.indicativeInterestRate.errors?.['required']">
+                Indicative Interest Rate is required (2.5-30)
+            </mat-error>
+            <mat-error class="text-danger" *ngIf="(loanFormControl.indicativeInterestRate.touched || submitted)
+            && (loanFormControl.indicativeInterestRate.errors?.['min'] || loanFormControl.indicativeInterestRate.errors?.['max'])">
+                Enter a Percentage value between 2.5 and 30
+            </mat-error>
+            <mat-error class="text-danger" *ngIf="(loanFormControl.indicativeInterestRate.touched || submitted)
+            && loanFormControl.indicativeInterestRate.errors?.['pattern']">
+                Enter a valid Percentage value (2.5-30)
+            </mat-error>
+          </mat-form-field>
+        </form>
+        <br />
+        <button mat-raised-button color="primary" (click)="onSubmit()">Check Loan</button>
+        <br />
+        <!-- Response: {{ repaymentSchedule | json }} -->
+
+        <mat-card *ngIf="repaymentSchedule != undefined">
+          <mat-card-content>
+            <p>Monthly Installment: {{ repaymentSchedule.equalMonthlyInstallment }}</p>
+            <table mat-table [dataSource]="repaymentSchedule.monthlyInstallments" class="mat-elevation-z8">
+              <ng-container matColumnDef="Month">
+                <th mat-header-cell *matHeaderCellDef>Month</th>
+                <td mat-cell *matCellDef="let element">{{element.month}}</td>
+              </ng-container>
+              <ng-container matColumnDef="MonthlyInstallment">
+                <th mat-header-cell *matHeaderCellDef>Monthly Installment</th>
+                <td mat-cell *matCellDef="let element">{{element.monthlyInstallment}}</td>
+              </ng-container>
+              <ng-container matColumnDef="InterestPortion">
+                <th mat-header-cell *matHeaderCellDef>Interest Portion</th>
+                <td mat-cell *matCellDef="let element">{{element.interestPortion}}</td>
+              </ng-container>
+              <ng-container matColumnDef="PrincipalPortion">
+                <th mat-header-cell *matHeaderCellDef>Principal Portion</th>
+                <td mat-cell *matCellDef="let element">{{element.principalPortion}}</td>
+              </ng-container>
+              <ng-container matColumnDef="OutstandingPrincipal">
+                <th mat-header-cell *matHeaderCellDef>Outstanding Principal</th>
+                <td mat-cell *matCellDef="let element">{{element.outstandingPrincipal}}</td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </mat-card-content>
+
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
