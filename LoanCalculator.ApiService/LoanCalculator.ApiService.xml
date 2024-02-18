@@ -34,11 +34,62 @@
             `(1+r)^n` portion of the calculations.
             </summary>
         </member>
+        <member name="T:LoanCalculator.ApiService.LoanCalculator.EquatedMonthlyInstallment">
+            <summary>
+            Strongly-typed Monthly Installment for LoanRepaymentSchedule.
+            </summary>
+            <param name="Month"></param>
+            <param name="MonthlyInstallment"></param>
+            <param name="Principal"></param>
+            <param name="Interest"></param>
+            <param name="OutstandingBalance"></param>
+        </member>
+        <member name="M:LoanCalculator.ApiService.LoanCalculator.EquatedMonthlyInstallment.#ctor(System.Int32,LoanCalculator.Common.ValueObjects.Money,LoanCalculator.Common.ValueObjects.Money,LoanCalculator.Common.ValueObjects.Money,LoanCalculator.Common.ValueObjects.Money)">
+            <summary>
+            Strongly-typed Monthly Installment for LoanRepaymentSchedule.
+            </summary>
+            <param name="Month"></param>
+            <param name="MonthlyInstallment"></param>
+            <param name="Principal"></param>
+            <param name="Interest"></param>
+            <param name="OutstandingBalance"></param>
+        </member>
+        <member name="P:LoanCalculator.ApiService.LoanCalculator.EquatedMonthlyInstallment.Month">
+            <summary></summary>
+        </member>
+        <member name="P:LoanCalculator.ApiService.LoanCalculator.EquatedMonthlyInstallment.MonthlyInstallment">
+            <summary></summary>
+        </member>
         <member name="T:LoanCalculator.ApiService.LoanCalculator.LoanCalculatorService">
             <summary>
             May not be necessary for now as there's only 1 Calculation type,
             but could be refactored in the future for more use cases.
             </summary>
+        </member>
+        <member name="T:LoanCalculator.ApiService.LoanCalculator.LoanTerms">
+            <summary>
+            Record type.
+            </summary>
+            <param name="LoanAmount"></param>
+            <param name="LoanTenureYears"></param>
+            <param name="IndicativeInterestRate"></param>
+        </member>
+        <member name="M:LoanCalculator.ApiService.LoanCalculator.LoanTerms.#ctor(LoanCalculator.Common.ValueObjects.Money,System.Int32,LoanCalculator.Common.ValueObjects.PercentageRate)">
+            <summary>
+            Record type.
+            </summary>
+            <param name="LoanAmount"></param>
+            <param name="LoanTenureYears"></param>
+            <param name="IndicativeInterestRate"></param>
+        </member>
+        <member name="P:LoanCalculator.ApiService.LoanCalculator.LoanTerms.LoanAmount">
+            <summary></summary>
+        </member>
+        <member name="P:LoanCalculator.ApiService.LoanCalculator.LoanTerms.LoanTenureYears">
+            <summary></summary>
+        </member>
+        <member name="P:LoanCalculator.ApiService.LoanCalculator.LoanTerms.IndicativeInterestRate">
+            <summary></summary>
         </member>
     </members>
 </doc>

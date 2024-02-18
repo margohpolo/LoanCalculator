@@ -29,57 +29,6 @@
         <member name="P:LoanCalculator.Common.LoanTermsDto.IndicativeInterestRate">
             <summary></summary>
         </member>
-        <member name="T:LoanCalculator.Common.LoanTerms">
-            <summary>
-            Record type.
-            </summary>
-            <param name="LoanAmount"></param>
-            <param name="LoanTenureYears"></param>
-            <param name="IndicativeInterestRate"></param>
-        </member>
-        <member name="M:LoanCalculator.Common.LoanTerms.#ctor(LoanCalculator.Common.ValueObjects.Money,System.Int32,LoanCalculator.Common.ValueObjects.PercentageRate)">
-            <summary>
-            Record type.
-            </summary>
-            <param name="LoanAmount"></param>
-            <param name="LoanTenureYears"></param>
-            <param name="IndicativeInterestRate"></param>
-        </member>
-        <member name="P:LoanCalculator.Common.LoanTerms.LoanAmount">
-            <summary></summary>
-        </member>
-        <member name="P:LoanCalculator.Common.LoanTerms.LoanTenureYears">
-            <summary></summary>
-        </member>
-        <member name="P:LoanCalculator.Common.LoanTerms.IndicativeInterestRate">
-            <summary></summary>
-        </member>
-        <member name="T:LoanCalculator.Common.EquatedMonthlyInstallment">
-            <summary>
-            Strongly-typed Monthly Installment for LoanRepaymentSchedule.
-            </summary>
-            <param name="Month"></param>
-            <param name="MonthlyInstallment"></param>
-            <param name="Principal"></param>
-            <param name="Interest"></param>
-            <param name="OutstandingBalance"></param>
-        </member>
-        <member name="M:LoanCalculator.Common.EquatedMonthlyInstallment.#ctor(System.Int32,LoanCalculator.Common.ValueObjects.Money,LoanCalculator.Common.ValueObjects.Money,LoanCalculator.Common.ValueObjects.Money,LoanCalculator.Common.ValueObjects.Money)">
-            <summary>
-            Strongly-typed Monthly Installment for LoanRepaymentSchedule.
-            </summary>
-            <param name="Month"></param>
-            <param name="MonthlyInstallment"></param>
-            <param name="Principal"></param>
-            <param name="Interest"></param>
-            <param name="OutstandingBalance"></param>
-        </member>
-        <member name="P:LoanCalculator.Common.EquatedMonthlyInstallment.Month">
-            <summary></summary>
-        </member>
-        <member name="P:LoanCalculator.Common.EquatedMonthlyInstallment.MonthlyInstallment">
-            <summary></summary>
-        </member>
         <member name="T:LoanCalculator.Common.EquatedMonthlyInstallmentDto">
             <summary>
             DTO for EquatedMonthlyInstallment.
@@ -104,6 +53,41 @@
             <summary></summary>
         </member>
         <member name="P:LoanCalculator.Common.EquatedMonthlyInstallmentDto.MonthlyInstallment">
+            <summary></summary>
+        </member>
+        <member name="T:LoanCalculator.Common.RepaymentScheduleDto">
+            <summary>
+            DTO for the Loan RepaymentSchedule.
+            </summary>
+            <param name="EqualMonthlyInstallment"></param>
+            <param name="TotalPaymentsMade"></param>
+            <param name="TotalPrincipalPaid"></param>
+            <param name="TotalInterestPaid"></param>
+            <param name="MonthlyInstallments"></param>
+        </member>
+        <member name="M:LoanCalculator.Common.RepaymentScheduleDto.#ctor(System.String,System.String,System.String,System.String,System.Collections.Generic.HashSet{LoanCalculator.Common.EquatedMonthlyInstallmentDto})">
+            <summary>
+            DTO for the Loan RepaymentSchedule.
+            </summary>
+            <param name="EqualMonthlyInstallment"></param>
+            <param name="TotalPaymentsMade"></param>
+            <param name="TotalPrincipalPaid"></param>
+            <param name="TotalInterestPaid"></param>
+            <param name="MonthlyInstallments"></param>
+        </member>
+        <member name="P:LoanCalculator.Common.RepaymentScheduleDto.EqualMonthlyInstallment">
+            <summary></summary>
+        </member>
+        <member name="P:LoanCalculator.Common.RepaymentScheduleDto.TotalPaymentsMade">
+            <summary></summary>
+        </member>
+        <member name="P:LoanCalculator.Common.RepaymentScheduleDto.TotalPrincipalPaid">
+            <summary></summary>
+        </member>
+        <member name="P:LoanCalculator.Common.RepaymentScheduleDto.TotalInterestPaid">
+            <summary></summary>
+        </member>
+        <member name="P:LoanCalculator.Common.RepaymentScheduleDto.MonthlyInstallments">
             <summary></summary>
         </member>
         <member name="T:LoanCalculator.Common.WeatherForecast">

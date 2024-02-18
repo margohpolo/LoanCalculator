@@ -1,5 +1,4 @@
-﻿using LoanCalculator.Common;
-using LoanCalculator.Common.ValueObjects;
+﻿using LoanCalculator.Common.ValueObjects;
 
 namespace LoanCalculator.ApiService.LoanCalculator;
 
@@ -72,7 +71,7 @@ public class LoanEquatedRepaymentSchedule
 
         while (monthCount < _numberOfMonthlyPayments)
         {
-            bool isFinalPayment = EMI > principalRemaining;
+            bool isFinalPayment = EMI >= principalRemaining;
             Money monthlyInstallment = (isFinalPayment) ? principalRemaining : EMI;
             Money interestPortion = principalRemaining * interestRateMonthly;
             Money principalPortion = (isFinalPayment) ? principalRemaining : monthlyInstallment - interestPortion;
